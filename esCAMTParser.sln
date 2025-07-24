@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "esCAMTParser", "esCAMTParser.csproj", "{28073309-4ED2-4661-BEFF-AE0560784CA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "esCAMTTestUtility", "..\..\esCAMTTestUtility\esCAMTTestUtility.csproj", "{AEC39CCA-B6D6-409E-8DDA-335B0F351CC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28073309-4ED2-4661-BEFF-AE0560784CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28073309-4ED2-4661-BEFF-AE0560784CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28073309-4ED2-4661-BEFF-AE0560784CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28073309-4ED2-4661-BEFF-AE0560784CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC39CCA-B6D6-409E-8DDA-335B0F351CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC39CCA-B6D6-409E-8DDA-335B0F351CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC39CCA-B6D6-409E-8DDA-335B0F351CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC39CCA-B6D6-409E-8DDA-335B0F351CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A91A86F3-14BE-4FFF-B21D-BBFDB8884BF7}
+	EndGlobalSection
+	GlobalSection(AutomaticVersions) = postSolution
+		UpdateAssemblyVersion.Debug|Any CPU = True
+		UpdateAssemblyFileVersion.Debug|Any CPU = True
+		UpdateAssemblyInfoVersion.Debug|Any CPU = True
+		AssemblyVersionSettings.Debug|Any CPU = None.None.None.Increment
+		AssemblyFileVersionSettings.Debug|Any CPU = None.None.None.Increment
+		AssemblyInfoVersionSettings.Debug|Any CPU = None.None.None.Increment
+		UpdatePackageVersion.Debug|Any CPU = False
+		AssemblyInfoVersionType.Debug|Any CPU = SettingsVersion
+		InheritWinAppVersionFrom.Debug|Any CPU = None
+	EndGlobalSection
+EndGlobal
