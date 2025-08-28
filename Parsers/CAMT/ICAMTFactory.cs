@@ -1,5 +1,6 @@
 ﻿using esCAMTParser.Models.CAMT._053;
 using esCAMTParser.Parsers.CAMT._053.V2;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace esCAMTParser.Parsers.CAMT
@@ -17,18 +18,25 @@ namespace esCAMTParser.Parsers.CAMT
     {
         public IStatementParser GetParser(Stream xmlStream)
         {
+            xmlStream.Position = 0;
+
             var document = XDocument.Load(xmlStream);
             var root = document.Root;
 
             var schema = root?.GetDefaultNamespace()?.NamespaceName ?? string.Empty;
 
-            if (schema.Contains("camt.053.001.02"))
-                return new CAMT053ParserV2();
+            var match = Regex.Match(schema, @"camt\.053\.001\.(\d+)$");
+            if (!match.Success)
+                throw new NotSupportedException($"Unsupported CAMT schema: {schema}");
 
-            //if (schema.Contains("camt.053.001.08"))
-                //return new CAMT053V8Parser();
+            var version = int.Parse(match.Groups[1].Value);
 
-            throw new NotSupportedException($"Unsupported CAMT version: {schema}");
+            return version switch
+            {
+                2 => new CAMT053ParserV2(),
+                // 8 => new CAMT053ParserV8(),
+                _ => throw new NotSupportedException($"Unsupported CAMT.053 version: {version}")
+            };
         }
     }
 }
