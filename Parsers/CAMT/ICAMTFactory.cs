@@ -1,5 +1,6 @@
 ﻿using esCAMTParser.Models.CAMT._053;
 using esCAMTParser.Parsers.CAMT._053.V2;
+using esCAMTParser.Parsers.CAMT._053.V8;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
@@ -34,7 +35,7 @@ namespace esCAMTParser.Parsers.CAMT
             return version switch
             {
                 2 => new CAMT053ParserV2(),
-                // 8 => new CAMT053ParserV8(),
+                8 => new CAMT053ParserV8(),
                 _ => throw new NotSupportedException($"Unsupported CAMT.053 version: {version}")
             };
         }

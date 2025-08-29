@@ -3,6 +3,8 @@
 Developed to provide a simple, easy-to-use CAMT053 parser that works across multiple banks in the SEPA zone.  
 The package has been compiled and tested for use within **Microsoft Visual Studio 2022**, and also in near production-ready internal applications for CRM, Accounting, and Sales pipelines.
 
+Currently supports parsing of CAMT053.001.002 and CAMT053.001.008 formats with CAMT053.001.002 as base class;
+
 **Source code**: [GitHub](https://github.com/Arachnid84/esCAMTParser) | **NuGet**: [esCAMTParser](https://www.nuget.org/packages/esCAMTParser/)
 
 ---
@@ -40,6 +42,7 @@ The statement class returns the following values:
 
 - String: StatementId: Tag Id - Id of the processed statement.
 - String: SequenceNumber: Tag ElctrncSeqNb or SeqNb - Sequence number for statement. Returns empty if not provided
+- String: Reference: Generated statement reference comprised of either StatementId or StatementId-SequenceNumber if SequenceNumber is provided
 - DateTime: CreationDateTime: Tag CreDtTm - Statement file creation date and time
 - DateTime: FromDate: Tag FrToDt/FrDtTm - The date from which the statement is valid
 - DateTime: EndDate: Tag FrToDt/ToDtTm - The date until which the statement is valid
@@ -47,7 +50,7 @@ The statement class returns the following values:
 - String: Currency: Tag Acct/@Ccy - Returns the statements primary currency if provided
 - Decimal: OpeningBalance: Tag Bal/Amt (CD=OPBD) - The openening balance of the statement
 - Decimal: ClosingBalance: Tag Bal/Amt (CD=CLBD) - The closing balance of the statement
-- String: AdditionalInformation: Tag AddtlInf - Additional information on the statement. Returns empty if not proviced;
+- String: AdditionalInformation: Tag AddtlInf - Additional information on the statement. Returns empty if not proviced
 - ICollection Transaction: Transactions: Tag Ntry - Collection of transactions contained in the current statement
 
 ###Transaction

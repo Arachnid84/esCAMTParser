@@ -13,12 +13,11 @@ namespace esCAMTParser.Parsers.CAMT._053.V2
     {
         public List<Statement> Parse(Stream xmlStream)
         {
-            xmlStream.Position = 0; // Reset stream position to the beginning
+            xmlStream.Position = 0;
 
             var document = XDocument.Load(xmlStream);
             var root = document.Root;
 
-            // Find the <Stmt> element
             var stmtElem = root?.Descendants().Where(e => e.Name.LocalName == "Stmt");
             if (stmtElem == null)
                 throw new InvalidDataException("No <Stmt> element found in CAMT file.");
@@ -52,9 +51,13 @@ namespace esCAMTParser.Parsers.CAMT._053.V2
             DateTime? fromDate = DateTime.TryParse(openingBalElem?.ElementAnyNs("Dt")?.ElementAnyNs("Dt")?.Value, out var fdt) ? fdt : null;
             DateTime? toDate = DateTime.TryParse(closingBalElem?.ElementAnyNs("Dt")?.ElementAnyNs("Dt")?.Value, out var tdt) ? tdt : null;
 
+            string stmtSequenceNumber = (stmt.ElementAnyNs("ElctrncSeqNb")?.Value ?? stmt.ElementAnyNs("SeqNb")?.Value) ?? string.Empty;
+
             var statement = new Statement
             {
                 StatementId = stmt.ElementAnyNs("Id")?.Value ?? throw new InvalidOperationException("Statement ID is required."),
+                SequenceNumber = stmtSequenceNumber,
+                Reference = !string.IsNullOrWhiteSpace(stmtSequenceNumber) ? stmt.ElementAnyNs("Id")?.Value + '-' + stmtSequenceNumber : stmt.ElementAnyNs("Id")?.Value,
                 CreationDateTime = DateTime.Parse(stmt.ElementAnyNs("CreDtTm")?.Value ?? throw new InvalidOperationException("Creation date and time is required.")),
                 FromDate = stmt.ElementAnyNs("FrToDt")?.ElementAnyNs("FrDt")?.Value is string fromDateValue ? DateTime.Parse(fromDateValue) : fromDate,
                 EndDate = stmt.ElementAnyNs("FrToDt")?.ElementAnyNs("ToDt")?.Value is string endDateValue ? DateTime.Parse(endDateValue) : fromDate,

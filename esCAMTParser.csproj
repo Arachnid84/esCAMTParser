@@ -5,11 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <Company>Extreme Solutions</Company>
-	  <Version>2508.0</Version>
+	  <Version>2508.1</Version>
 	  <Product>CAMT053 Parser</Product>
 	  <Copyright>Copyright - Extreme Solutions - 2025 - All rights reserved</Copyright>
-	  <AssemblyVersion>1.0.2508.30010</AssemblyVersion>
-	  <FileVersion>1.0.2508.30010</FileVersion>
+	  <AssemblyVersion>1.0.2508.35016</AssemblyVersion>
+	  <FileVersion>1.0.2508.35016</FileVersion>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Title>Extreme Solutions CAMT053 Parser library</Title>
 	  <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
@@ -27,10 +27,6 @@
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>None</InheritWinAppVersionFrom>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Parsers\CAMT\_053\V8\" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="README.md">
