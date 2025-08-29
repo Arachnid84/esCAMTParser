@@ -10,7 +10,7 @@ namespace esCAMTParser.Models.CAMT._053
     {
         public required string StatementId { get; set; }
         public required DateTime CreationDateTime { get; set; }
-        public string? SequenceNumber { get; set; }
+        public required string SequenceNumber { get; set; }
         public string? Reference { get; set; }
         public DateTime? FromDate { get; set; }
         public DateTime? EndDate { get; set; }
