@@ -1,4 +1,6 @@
 # Extreme Solutions CAMT053 Parser
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FArachnid84%2FesCAMTParser.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FArachnid84%2FesCAMTParser?ref=badge_shield)
+
 
 Developed to provide a simple, easy-to-use CAMT053 parser that works across multiple banks in the SEPA zone.  
 The package has been compiled and tested for use within **Microsoft Visual Studio 2022**, and also in near production-ready internal applications for CRM, Accounting, and Sales pipelines.
@@ -69,3 +71,6 @@ The transactions contain the following values as collection within the statement
 - ICollection: References: Tag Refs - List of references related to the transaction
 - ICollection: Charges: Tag Chrgs - List of transaction charges related to the transaction
 - ICollection: Attributes: Tag multiple - List of additional attributes related to the transaction
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FArachnid84%2FesCAMTParser.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FArachnid84%2FesCAMTParser?ref=badge_large)
