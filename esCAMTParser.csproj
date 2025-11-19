@@ -5,17 +5,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <Company>Extreme Solutions</Company>
-	  <Version>2510.4</Version>
+	  <Version>2511</Version>
 	  <Product>CAMT053 Parser</Product>
 	  <Copyright>Copyright - Extreme Solutions - 2025 - All rights reserved</Copyright>
-	  <AssemblyVersion>1.0.2510.43002</AssemblyVersion>
-	  <FileVersion>1.0.2510.43001</FileVersion>
+	  <AssemblyVersion>1.0.2511.47001</AssemblyVersion>
+	  <FileVersion>1.0.2511.47001</FileVersion>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Title>Extreme Solutions CAMT053 Parser library</Title>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <ApplicationIcon>esParser.ico</ApplicationIcon>
+	  <PackageIcon>esParser.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -31,6 +32,13 @@
 
   <ItemGroup>
     <Content Include="esParser.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="G:\OneDrive\OneDrive - Extreme Solutions\Desktop\esParser.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
